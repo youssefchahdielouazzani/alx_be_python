@@ -1,5 +1,5 @@
 def display_menu():
-    print("\nShopping List Manager")
+    print("Shopping List Manager")
     print("1. Add Item")
     print("2. Remove Item")
     print("3. View List")
@@ -9,32 +9,20 @@ def main():
     shopping_list = []
     while True:
         display_menu()
-        try:
-            choice = int(input("Enter your choice: "))  # ✅ conversion en entier
-        except ValueError:
-            print("Invalid input. Please enter a number (1-4).")
-            continue
+        choice = int(input("Enter your choice: "))  # ✅ conversion directe en nombre
 
         if choice == 1:
             item = input("Enter item to add: ")
             shopping_list.append(item)
-            print(f"{item} has been added to your shopping list.")
 
         elif choice == 2:
             item = input("Enter item to remove: ")
             if item in shopping_list:
                 shopping_list.remove(item)
-                print(f"{item} has been removed from your shopping list.")
-            else:
-                print(f"{item} not found in your shopping list.")
 
         elif choice == 3:
-            if shopping_list:
-                print("\nYour Shopping List:")
-                for idx, item in enumerate(shopping_list, start=1):
-                    print(f"{idx}. {item}")
-            else:
-                print("Your shopping list is empty.")
+            for item in shopping_list:
+                print(item)
 
         elif choice == 4:
             print("Goodbye!")
@@ -45,4 +33,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-
