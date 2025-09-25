@@ -9,7 +9,7 @@ def main():
     shopping_list = []
     while True:
         display_menu()
-        choice = int(input("Enter your choice: "))  # ✅ conversion directe en nombre
+        choice = int(input("Enter your choice: "))  
 
         if choice == 1:
             item = input("Enter item to add: ")
