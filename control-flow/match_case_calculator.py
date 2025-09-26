@@ -1,25 +1,22 @@
-# match_case_calculator.py
+num1 = float(input("Enter the first number: "))
+num2 = float(input("Enter the second number: "))
+operation = input("Choose the operation (+, -, *, /): ")
 
-# Demande des deux nombres
-num1 = float(input("Entrez le premier nombre: "))
-num2 = float(input("Entrez le deuxième nombre: "))
-
-# Demande l'opération
-operation = input("Choisissez l'opération (+, -, *, /): ")
-
-# On utilise if / elif / else au lieu de match case
-if operation == "+":
-    result = num1 + num2
-elif operation == "-":
-    result = num1 - num2
-elif operation == "*":
-    result = num1 * num2
-elif operation == "/":
-    if num2 != 0:
-        result = num1 / num2
-    else:
-        result = "Erreur: division par zéro"
-else:
-    result = "Opération non valide"
-
-print("Résultat:", result)
+match operation:
+    case "+":
+        result = num1 + num2
+        print(f"The result is {result}")
+    case "-":
+        result = num1 - num2
+        print(f"The result is {result}")
+    case "*":
+        result = num1 * num2
+        print(f"The result is {result}")
+    case "/":
+        if num2 == 0:
+            print("Cannot divide by zero.")
+        else:
+            result = num1 / num2
+            print(f"The result is {result}")
+    case _:
+        print("Invalid operation.")
