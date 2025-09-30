@@ -8,8 +8,9 @@ def main():
         print("Commands: deposit, withdraw, display")
         return
 
-    command, *params = sys.argv[1].split(':')
-    amount = float(params[0]) if params else None
+    args = sys.argv[1].split(':')
+    command = args[0]
+    amount = float(args[1]) if len(args) > 1 else None
 
     if command == "deposit" and amount is not None:
         account.deposit(amount)
